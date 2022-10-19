@@ -160,6 +160,7 @@ struct DetailsPageTopComponent: View{
         }
         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.55)
         .background(Color.white)
+        .cornerRadius(30)
     }
 }
 
