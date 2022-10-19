@@ -4,4 +4,4 @@
 **App Screenshots**
 
 
-<img src='./screenshot.png' width='400px' />
+<img src='./screenshot.png' width='1000px' />
