@@ -148,8 +148,8 @@ struct VehicleDetailsTopSection: View{
         ZStack{
             Image("Car")
                 .resizable()
+                .aspectRatio(contentMode: .fill)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height*0.55)
-                .aspectRatio(contentMode: .fit)
                 .cornerRadius(30)
             
             VStack{
