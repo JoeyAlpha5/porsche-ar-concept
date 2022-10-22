@@ -16,6 +16,7 @@
 		6F8C556729008575004565D5 /* porsche930TurboUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8C556629008575004565D5 /* porsche930TurboUITests.swift */; };
 		6F8C556929008575004565D5 /* porsche930TurboUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8C556829008575004565D5 /* porsche930TurboUITestsLaunchTests.swift */; };
 		6F8C5578290095FE004565D5 /* CarHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F8C5577290095FE004565D5 /* CarHighlight.swift */; };
+		D44B10EB290426C900A01861 /* ARSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D44B10EA290426C900A01861 /* ARSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		6F8C556629008575004565D5 /* porsche930TurboUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = porsche930TurboUITests.swift; sourceTree = "<group>"; };
 		6F8C556829008575004565D5 /* porsche930TurboUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = porsche930TurboUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6F8C5577290095FE004565D5 /* CarHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarHighlight.swift; sourceTree = "<group>"; };
+		D44B10EA290426C900A01861 /* ARSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		6F8C553D29008571004565D5 = {
 			isa = PBXGroup;
 			children = (
+				D44B10EC29043BCE00A01861 /* Model */,
 				6F8C554829008571004565D5 /* porsche930Turbo */,
 				6F8C555B29008575004565D5 /* porsche930TurboTests */,
 				6F8C556529008575004565D5 /* porsche930TurboUITests */,
@@ -104,6 +107,7 @@
 				6F8C554F29008575004565D5 /* Assets.xcassets */,
 				6F8C555129008575004565D5 /* Preview Content */,
 				6F8C5577290095FE004565D5 /* CarHighlight.swift */,
+				D44B10EA290426C900A01861 /* ARSettings.swift */,
 			);
 			path = porsche930Turbo;
 			sourceTree = "<group>";
@@ -131,6 +135,13 @@
 				6F8C556829008575004565D5 /* porsche930TurboUITestsLaunchTests.swift */,
 			);
 			path = porsche930TurboUITests;
+			sourceTree = "<group>";
+		};
+		D44B10EC29043BCE00A01861 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 				6F8C554A29008571004565D5 /* AppDelegate.swift in Sources */,
 				6F8C554E29008571004565D5 /* Experience.rcproject in Sources */,
 				6F8C5578290095FE004565D5 /* CarHighlight.swift in Sources */,
+				D44B10EB290426C900A01861 /* ARSettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

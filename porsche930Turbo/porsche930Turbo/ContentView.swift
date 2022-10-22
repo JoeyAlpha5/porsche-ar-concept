@@ -9,9 +9,42 @@ import SwiftUI
 import RealityKit
 
 struct ContentView : View {
+    
+    @StateObject var arSettings = ARSettings()
+    
     var body: some View {
         return VStack{
-            PorscheDetailsPage()
+            
+            if arSettings.displayVehicle{
+                ZStack{
+                    
+                    VStack{
+                        Button(action: {
+                            arSettings.displayVehicle = false
+                        }, label: {
+                            HStack{
+                                Image(systemName:"chevron.left")
+                                    .font(.system(size: 30))
+                                    .foregroundColor(Color.black)
+                            }
+                            
+                            .frame(width: 60, height: 60)
+                            .background(Color.white)
+                            .cornerRadius(13)
+                        })
+                    }
+                    .frame(width:UIScreen.main.bounds.width, height:UIScreen.main.bounds.height,alignment: .topLeading)
+                    .padding(.top,100)
+                    .padding(.leading,30)
+                    
+    
+
+                }
+                
+            }
+            else{
+                PorscheDetailsPage(arSettings: arSettings)
+            }
         }
         .frame(maxWidth: .infinity,maxHeight: .infinity)
         .background(Color("PrimaryColor"))
@@ -24,9 +57,11 @@ struct ContentView : View {
 
 
 struct PorscheDetailsPage: View{
+    @ObservedObject var arSettings: ARSettings
+    
     var body: some View{
         ScrollView{
-            DetailsPageTopComponent()
+            DetailsPageTopComponent(arSettings: arSettings)
             DetailsPageBottomComponent()
             
         }
@@ -36,6 +71,7 @@ struct PorscheDetailsPage: View{
 
 
 struct DetailsPageBottomComponent: View{
+    
     var body: some View{
         VStack{
             HStack{
@@ -103,8 +139,8 @@ struct DetailsPageBottomComponent: View{
 
 
 struct DetailsPageTopComponent: View{
-    
-    private var Highlights: [CarHiglight] = [
+    @ObservedObject var arSettings: ARSettings
+    var Highlights: [CarHiglight] = [
         CarHiglight(highlightTitle: "Top speed", text: "246 km/h"),
         CarHiglight(highlightTitle: "80 000 km", text: "Mileage"),
         CarHiglight(highlightTitle: "Manual", text: "Transmission")
@@ -122,7 +158,7 @@ struct DetailsPageTopComponent: View{
             VStack(){
                 
                 Button(action: {
-                    
+                    arSettings.displayVehicle = true
                 }, label: {
                     HStack{
                         Image(systemName:"play.fill")
