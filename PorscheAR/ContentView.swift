@@ -14,38 +14,32 @@ struct ContentView : View {
     @StateObject var arSettings = ARSteetings()
     
     var body: some View {
-        return ZStack(alignment: .top){
+        return ZStack(alignment: .topLeading){
             
             if arSettings.previewVehicle{
-                
                 // render AR model
                 ARViewContainer(arSettings: arSettings)
-                HStack{
-                    Button(action: {
-                            
-                        arSettings.previewVehicle = false
+                Button(action: {
                         
-                    }, label: {
-                        Image(systemName: "chevron.left")
-                            .foregroundColor(Color.black)
-                            .font(.title)
-                    })
-                    .frame(width: 103, height: 60)
-                    .background(Color.white)
-                    .cornerRadius(13)
-                    .padding(.top, 60)
-                    .padding(.leading,30)
-                }
-                .frame(width: UIScreen.main.bounds.width, height:20, alignment: .topLeading)
-
-        
+                    arSettings.previewVehicle = false
+                    
+                }, label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(Color.black)
+                        .font(.title)
+                })
+                .frame(width: 103, height: 60)
+                .background(Color.white)
+                .cornerRadius(13)
+                .padding(.top, 60)
+                .padding(.leading,30)
             }
             else{
                 VehicleDetails(arSettings: arSettings)
             }
             
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("PrimaryColor"))
         .edgesIgnoringSafeArea(.all)
     }
@@ -220,7 +214,7 @@ struct ARViewContainer: UIViewRepresentable {
         let fileName = "FREE_1975_Porsche_911_930_Turbo.usdz"
         let modelEntity = try! ModelEntity.loadModel(named: fileName)
 
-        let anchorEntity = AnchorEntity()
+        let anchorEntity = AnchorEntity(plane: .any)
         anchorEntity.addChild(modelEntity)
 
         uiView.scene.addAnchor(anchorEntity)
